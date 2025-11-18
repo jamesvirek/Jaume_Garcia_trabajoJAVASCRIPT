@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- Documento principal de la web de SATPro IT Services, trabajo final de Javascript -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATPro IT Services Contacto</title>
+
+<!-- Estilo principal de la pagina, aqui van todos los CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+<!-- Descripcion para el SEO i para que el navegador sepa de que va la web -->
+    <meta name="description" content="Contacto SATPro IT services.">
+<!-- CSS de Leaflet (mapa) -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+>
+
+<!-- CSS de Leaflet Routing Machine (para la ruta) en w3c validator salta error estas 4 linias. pero al quitarlo y al calcular la ruta no se visualiza la ruta -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"
+/>
+
+</head>
+<body>
+
+<!-- Cabecera i menu principal -->
+    <header class="site-header">
+        <div class="container header-inner">
+<!-- Logo de la empresa, linkada al inicio -->
+        <a href="index.html" class="logo">
+            <img src="img/logo-satpro.svg" alt="Logotipo SATPro IT Services">
+        </a>
+
+<!-- Menu con los enlaces a las distintas paginas del trabajo -->
+        <nav class="main-nav">
+            <ul>
+<!-- Pagina actual marcada como active -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="presupuesto.html">Presupuesto</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+<!-- Contenido principal de la pagina -->
+<main>
+  <!-- Seccion principal de contacto -->
+  <!-- Aqui pongo datos de la empresa, un mini formulario i el mapa con la ruta -->
+
+  <section id="contacto" class="section contacto-section">
+    <div class="container contacto-grid">
+
+      <!-- Columna izquierda: datos de contacto i info basica -->
+      <div class="contacto-info">
+        <h1>Contacto SATPro IT Services</h1>
+        <p class="section-intro">
+          Si necesitas un tecnico de campo o tienes alguna duda sobre el servicio,
+          puedes llamarnos, enviar un correo o usar el formulario. Abajo tienes el mapa
+          con nuestra ubicacion i la ruta desde donde estes.
+        </p>
+
+        <div class="contacto-datos">
+          <h2>Datos de la empresa</h2>
+          <p><strong>Dirección:</strong> C/ Ejemplo 123, 28000 Madrid · España</p>
+          <p><strong>Teléfono:</strong> 910 000 000</p>
+          <p><strong>Email:</strong> info@satpro-it.com</p>
+          <p><strong>Horario:</strong> Lunes a viernes de 9:00 a 18:00</p>
+        </div>
+
+        <!-- Mini formulario de contacto (no es el principal del trabajo, es algo mas simple) -->
+        <div class="contacto-formulario">
+          <h2>Envíanos un mensaje rapido</h2>
+          <form id="form-contacto" novalidate>
+            <div class="campo-form">
+              <label for="c-nombre">Nombre</label>
+              <input type="text" id="c-nombre" name="c-nombre" placeholder="Tu nombre">
+            </div>
+
+            <div class="campo-form">
+              <label for="c-email">Correo electrónico</label>
+              <input type="email" id="c-email" name="c-email" placeholder="tucorreo@ejemplo.com">
+            </div>
+
+            <div class="campo-form">
+              <label for="c-mensaje">Mensaje</label>
+              <textarea id="c-mensaje" name="c-mensaje" rows="4" placeholder="Cuéntanos que necesitas..."></textarea>
+            </div>
+
+            <!-- Este formulario no hace validaciones tan bestias, el gordo es el de presupuesto -->
+            <button type="submit" class="btn btn-outline">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Columna derecha: mapa con la ubicacion i la ruta -->
+      <div class="contacto-mapa">
+        <h2>Dónde estamos i cómo llegar</h2>
+        <p class="mapa-texto">
+          En el mapa puedes ver nuestra oficina. Si pulsas el botón de abajo le pido
+          al navegador tu ubicacion (si aceptas) i dibujo la ruta hasta SATPro.
+        </p>
+
+        <!-- Boton para activar la geolocalizacion i calcular la ruta -->
+        <button id="btn-ruta" type="button" class="btn btn-primary">
+          Calcular ruta desde mi ubicación
+        </button>
+
+        <!-- Contenedor del mapa (Leaflet lo usa para pintar) -->
+        <div id="mapa-satpro" class="mapa-contacto">
+          <!-- El mapa se carga desde js/mapa.js -->
+        </div>
+
+        <!-- Mensajes informativos / errores del mapa -->
+        <p id="mapa-mensaje" class="mapa-mensaje">
+          Si no activas la ubicación, solo se mostrará el punto de SATPro.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+
+<!-- Pie de pagina con datos, redes i enlaces legales -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>SATPro IT Services</h3>
+            <p>Servicio de atención técnica informática de campo para empresas.</p>
+            <p class="footer-address">
+            C/ Ejemplo 123, 28000 Madrid · España
+            </p>
+        </div>
+
+        <div>
+            <h4>Redes sociales</h4>
+            <div class="footer-social">
+<!-- Enlaces a redes sociales, apuntando a las oficiales genericas -->
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">FB</a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">IN</a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="X / Twitter">X</a>
+        </div>
+        </div>
+
+        <div>
+            <h4>Legal</h4>
+<!-- Enlaces tipicos de aviso legal, privacidad i cookies -->
+            <ul class="footer-legal">
+            <li><a href="#">Aviso legal</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Política de cookies</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+<!-- El año se rellena con JavaScript en main.js -->
+      <p>© <span id="year"></span> SATPro IT Services. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+
+<!-- Scripts al final para que la pagina cargue primero el HTML i luego el JS -->
+ <!-- Leaflet base -->
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+
+<!-- Leaflet Routing Machine (para la ruta) -->
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/mapa.js"></script>
+</body>
+</html>
+
+

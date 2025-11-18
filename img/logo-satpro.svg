@@ -1,0 +1,30 @@
+<svg width="250" height="70" viewBox="0 0 250 70" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- CHIP CENTRAL -->
+  <rect x="10" y="10" width="50" height="50" rx="8" fill="#0052CC" stroke="#00B8D9" stroke-width="3"/>
+
+  <!-- PATILLAS DEL CHIP -->
+  <!-- Izquierda -->
+  <rect x="4" y="18" width="6" height="8" fill="#00B8D9"/>
+  <rect x="4" y="31" width="6" height="8" fill="#00B8D9"/>
+  <rect x="4" y="44" width="6" height="8" fill="#00B8D9"/>
+
+  <!-- Derecha -->
+  <rect x="60" y="18" width="6" height="8" fill="#00B8D9"/>
+  <rect x="60" y="31" width="6" height="8" fill="#00B8D9"/>
+  <rect x="60" y="44" width="6" height="8" fill="#00B8D9"/>
+
+  <!-- TRAZAS INTERNAS -->
+  <line x1="25" y1="25" x2="45" y2="25" stroke="#FFAB00" stroke-width="3" stroke-linecap="round"/>
+  <line x1="25" y1="35" x2="45" y2="35" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="25" y1="45" x2="45" y2="45" stroke="#FFAB00" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- TEXTO SATPro IT SERVICES -->
+  <text x="80" y="33" fill="#0052CC" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="800">
+    SATPro
+  </text>
+  <text x="80" y="55" fill="#00B8D9" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">
+    IT Services
+  </text>
+
+</svg>

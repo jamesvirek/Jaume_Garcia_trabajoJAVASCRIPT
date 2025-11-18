@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SATPro IT Services Soporte informático de campo</title>
+
+<!-- Estilo principal de la pagina, aqui van todos los CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+<!-- Descripcion para el SEO i para que el navegador sepa de que va la web -->
+    <meta name="description" content="SATPro IT Services. Técnicos informáticos de campo para empresas: incidencias, mantenimiento y despliegue de equipos.">
+</head>
+<body>
+
+<!-- Cabecera i menu principal -->
+    <header class="site-header">
+        <div class="container header-inner">
+<!-- Logo de la empresa, linkada al inicio -->
+        <a href="index.html" class="logo">
+            <img src="img/logo-satpro.svg" alt="Logotipo SATPro IT Services">
+        </a>
+
+<!-- Menu con los enlaces a las distintas paginas del trabajo -->
+        <nav class="main-nav">
+            <ul>
+<!-- Pagina actual marcada como active -->
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="presupuesto.html">Presupuesto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal de la pagina -->
+
+  
+  <main>
+    <!-- Seccion 1 - Portada de la web, presentacion i links rapidos -->
+    <section id="inicio" class="section hero-section">
+      <div class="container hero-grid">
+        <!-- Texto principal de bienvenida -->
+        <div class="hero-text">
+          <h1>Soporte informático de campo para empresas</h1>
+          <p>
+            En <strong>SATPro IT Services</strong> nos dedicamos al soporte
+            informático <em>sobre el terreno</em>: montamos i reparamos equipos,
+            revisamos la red i dejamos los puestos de trabajo listos para usar.
+          </p>
+          <p>
+            Trabajamos sobre todo con pequeñas i medianas empresas que necesitan
+            que alguien vaya físicamente a la oficina, tienda o almacén cuando
+            hay una incidencia.
+          </p>
+          <!-- Botones -->
+          <a href="presupuesto.html" class="btn btn-primary">Pedir presupuesto</a>
+          <a href="contacto.html" class="btn btn-outline">Hablar con un técnico</a>
+        </div>
+
+        <!-- Bloque lateral listando tareas del dia a dia -->
+        <div class="hero-highlight">
+          <h2>Qué hacemos en el día a día</h2>
+          <ul>
+            <li>Resolución de incidencias in situ en equipos i TPV.</li>
+            <li>Mantenimiento básico de hardware i software.</li>
+            <li>Revisión de puntos de red, Wi-Fi i electrónica.</li>
+            <li>Altas de nuevos puestos de trabajo i cambios de usuario.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion 2 - Servicios de la empresa, explico que hacemos exactamente -->
+    <section id="servicios" class="section services-section">
+      <div class="container">
+        <h2>Servicios técnicos de campo</h2>
+        <p class="section-intro">
+          No todos los problemas se arreglan por teléfono. Estos son algunos de los servicios
+          que solemos hacer cuando nos desplazamos a las instalaciones del cliente:
+        </p>
+
+        <!-- Grid con los distintos servicios en tarjetas -->
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Puestos de trabajo</h3>
+            <p>
+              Instalación i revisión de PCs, portátiles, impresoras i periféricos.
+              También clonamos equipos i dejamos el sistema listo para el usuario.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Redes y comunicaciones</h3>
+            <p>
+              Comprobación de puntos de red, reemplazo de switches o routers,
+              pequeñas tiradas de cable i revisión de Wi-Fi en oficinas o tiendas.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Servidores y copias</h3>
+            <p>
+              Puesta en marcha básica de servidores, comprobación de copias
+              de seguridad i tareas sencillas de administración del sistema.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Mantenimiento periódico</h3>
+            <p>
+              Visitas programadas para revisar incidencias abiertas, limpiar
+              equipos muy usados i aplicar actualizaciones pendientes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion 3 - Noticias (se cargan con JavaScript desde data/noticias.json) -->
+    <section id="noticias" class="section news-section">
+      <div class="container">
+        <h2>Noticias y avisos</h2>
+        <p class="section-intro">
+          Aquí vamos anotando mantenimientos programados, pequeños cambios de servicio
+          i avisos que pueden afectar a los clientes.
+        </p>
+
+        <!-- Contenedor donde JS pintara las noticias del archivo JSON -->
+        <div id="news-container" class="news-grid">
+          <!-- Mensaje inicial mientras se cargan las noticias via fetch en noticias.js -->
+          <p class="news-loading">Cargando noticias...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seccion 4 - Cobertura i tiempos de respuesta de los tecnicos -->
+    <section id="cobertura" class="section coverage-section">
+      <div class="container coverage-grid">
+        <!-- Texto explicando como funciona la cobertura i los SLA -->
+        <div>
+          <h2>Cobertura y tiempos de intervención</h2>
+          <p>
+            Trabajamos principalmente en zona urbana i polígonos. Según el tipo de servicio
+            i la distancia, ajustamos el tiempo de respuesta. De manera orientativa:
+          </p>
+          <ul class="coverage-list">
+            <li><strong>SLA urgente:</strong> respuesta aproximada en menos de 4 horas laborables.</li>
+            <li><strong>SLA estándar:</strong> visita durante el mismo día laborable.</li>
+            <li><strong>SLA programado:</strong> revisiones periódicas acordadas con el cliente.</li>
+          </ul>
+          <p>
+            Si necesitas algo muy específico (festivos, horarios fuera de oficina, etc.),
+            coméntalo en el formulario i lo revisamos.
+          </p>
+          <!-- Boton para llevar al usuario a la pagina de contacto -->
+          <a href="contacto.html" class="btn btn-primary">Consultar disponibilidad</a>
+        </div>
+
+        <!-- Bloque lateral tipo llamada a la accion para pedir un tecnico -->
+        <div class="coverage-box">
+          <h3>¿Te hace falta un técnico de campo?</h3>
+          <p>
+            Cuéntanos dónde está la incidencia, qué equipos hay afectados i el horario
+            en el que se puede intervenir. Con eso ya podemos darte una idea de costes.
+          </p>
+          <!-- Boton que manda al formulario de presupuesto -->
+          <a href="presupuesto.html" class="btn btn-outline">Rellenar formulario</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de pagina con datos, redes i enlaces legales -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SATPro IT Services</h3>
+        <p>Servicio de atención técnica informática de campo para empresas.</p>
+        <p class="footer-address">
+          C/ Ejemplo 123, 28000 Madrid · España
+        </p>
+      </div>
+
+      <div>
+        <h4>Redes sociales</h4>
+        <div class="footer-social">
+          <!-- Enlaces a redes sociales, apuntando a las oficiales genericas -->
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">FB</a>
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">IN</a>
+          <a href="https://www.twitter.com" target="_blank" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Legal</h4>
+        <!-- Enlaces tipicos de aviso legal, privacidad i cookies -->
+        <ul class="footer-legal">
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <!-- El año se rellena con JavaScript en main.js -->
+      <p>© <span id="year"></span> SATPro IT Services. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts al final para que la pagina cargue primero el HTML i luego el JS -->
+  <script src="js/main.js"></script>
+  <script src="js/noticias.js"></script>
+</body>
+</html>

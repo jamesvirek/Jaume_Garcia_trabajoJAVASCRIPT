@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATPro IT Services Galeria</title>
+
+<!-- Estilo principal de la pagina, aqui van todos los CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+<!-- Descripcion para el SEO i para que el navegador sepa de que va la web -->
+    <meta name="description" content="Galeria de intervenciones, instalaciones, etc.">
+<!-- Plugin Lightbox2 para la galeria -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+</head>
+<body>
+
+<!-- Cabecera i menu principal -->
+    <header class="site-header">
+        <div class="container header-inner">
+<!-- Logo de la empresa, linkada al inicio -->
+        <a href="index.html" class="logo">
+            <img src="img/logo-satpro.svg" alt="Logotipo SATPro IT Services">
+        </a>
+
+<!-- Menu con los enlaces a las distintas paginas del trabajo -->
+        <nav class="main-nav">
+            <ul>
+<!-- Pagina actual marcada como active -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html" class="active">Galería</a></li>
+                <li><a href="presupuesto.html">Presupuesto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- Contenido principal de la pagina -->
+
+  <main>
+  <!-- Seccion principal de la galeria -->
+  <!-- Aqui muestro fotos de intervenciones, equipos montados, redes, etc -->
+
+  <section id="galeria" class="section gallery-section">
+    <div class="container">
+
+      <!-- Titulo i pequeña intro para que no quede raro -->
+      <h1>Galería de trabajos e intervenciones</h1>
+      <p class="section-intro">
+        Algunas fotos de instalaciones, reparaciones i montajes que hemos hecho en clientes.
+        No pongo todas porque hay miles, pero sirve para que se vea lo que solemos hacer.
+      </p>
+
+      <!-- Contenedor donde iran las imagenes -->
+      <!-- IMPORTANTE: este div lo relleno luego desde galeria.js -->
+      <div id="galeria-contenedor" class="gallery-grid">
+        <!-- Aqui JS mete las imagenes como tarjetas -->
+        <!-- Pongo un mensajito mientras carga -->
+        <p class="gallery-loading">Cargando fotos...</p>
+      </div>
+
+
+    </div>
+  </section>
+</main>
+
+  <!-- Pie de pagina con datos, redes i enlaces legales -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SATPro IT Services</h3>
+        <p>Servicio de atención técnica informática de campo para empresas.</p>
+        <p class="footer-address">
+          C/ Ejemplo 123, 28000 Madrid · España
+        </p>
+      </div>
+
+      <div>
+        <h4>Redes sociales</h4>
+        <div class="footer-social">
+          <!-- Enlaces a redes sociales, apuntando a las oficiales genericas -->
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">FB</a>
+          <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">IN</a>
+          <a href="https://www.twitter.com" target="_blank" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Legal</h4>
+        <!-- Enlaces tipicos de aviso legal, privacidad i cookies -->
+        <ul class="footer-legal">
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <!-- El año se rellena con JavaScript en main.js -->
+      <p>© <span id="year"></span> SATPro IT Services. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts al final para que la pagina cargue primero el HTML i luego el JS -->
+  <script src="js/main.js"></script>
+  <script src="js/galeria.js"></script>
+</body>
+</html>

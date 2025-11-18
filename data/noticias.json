@@ -1,0 +1,17 @@
+[
+  {
+    "titulo": "Mantenimiento de red en tienda de Alcalá",
+    "fecha": "15/01/2025",
+    "descripcion": "Se ha hecho una revisión completa del switch principal, sustitución de dos latiguillos i comprobación del Wi-Fi. Todo funcionando."
+  },
+  {
+    "titulo": "Aviso: problemas con impresoras HP antiguas",
+    "fecha": "12/01/2025",
+    "descripcion": "Algunas impresoras HP de más de 10 años están dando errores de firmware. Si os pasa, avisadnos i pasamos a revisar o sustituir."
+  },
+  {
+    "titulo": "Nuevo servicio de despliegue de PCs",
+    "fecha": "08/01/2025",
+    "descripcion": "Añadimos servicio de instalación masiva de equipos con clonación i configuración para oficinas nuevas o ampliaciones."
+  }
+]

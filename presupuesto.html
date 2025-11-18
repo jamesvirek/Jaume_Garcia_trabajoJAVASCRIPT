@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATPro IT Services Presupuesto</title>
+
+<!-- Estilo principal de la pagina, aqui van todos los CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+<!-- Descripcion para el SEO i para que el navegador sepa de que va la web -->
+    <meta name="description" content="Formulario para presupuestos SATPro IT Services">
+</head>
+<body>
+
+<!-- Cabecera i menu principal -->
+    <header class="site-header">
+        <div class="container header-inner">
+<!-- Logo de la empresa, linkada al inicio -->
+        <a href="index.html" class="logo">
+            <img src="img/logo-satpro.svg" alt="Logotipo SATPro IT Services">
+        </a>
+
+<!-- Menu con los enlaces a las distintas paginas del trabajo -->
+        <nav class="main-nav">
+            <ul>
+<!-- Pagina actual marcada como active -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+  <!-- Contenido principal de la pagina -->
+<main>
+  <!-- Seccion principal del formulario de presupuesto -->
+  <!-- Aqui el cliente mete sus datos i lo que quiere, i la web calcula el precio sola -->
+
+  <section id="presupuesto" class="section presupuesto-section">
+    <div class="container">
+      <h1>Solicitud de presupuesto técnico</h1>
+      <p class="section-intro">
+        Rellena tus datos i lo que necesitas que hagamos. La parte de abajo calcula
+        el presupuesto aproximado teniendo en cuenta el servicio, el plazo i los extras.
+      </p>
+
+      <!-- Formulario completo, dividido en dos bloques como pide el enunciado -->
+      <!-- Bloque 1: datos de contacto -->
+      <!-- Bloque 2: configuracion del presupuesto -->
+      <form id="form-presupuesto" novalidate>
+        <!-- ================= DATOS DE CONTACTO ================= -->
+        <fieldset class="bloque-formulario">
+          <legend>Datos de contacto</legend>
+
+          <!-- Nombre: solo letras i maximo 15 caracteres -->
+          <div class="campo-form">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              maxlength="15"
+              placeholder="Nombre"
+            >
+            <small class="error-msg" id="error-nombre"></small>
+          </div>
+
+          <!-- Apellidos: solo letras i maximo 40 caracteres -->
+          <div class="campo-form">
+            <label for="apellidos">Apellidos</label>
+            <input
+              type="text"
+              id="apellidos"
+              name="apellidos"
+              maxlength="40"
+              placeholder="Apellidos"
+            >
+            <small class="error-msg" id="error-apellidos"></small>
+          </div>
+
+          <!-- Telefono: solo numeros i maximo 9 digitos -->
+          <div class="campo-form">
+            <label for="telefono">Teléfono</label>
+            <input
+              type="text"
+              id="telefono"
+              name="telefono"
+              maxlength="9"
+              placeholder="Ej: 612345678"
+            >
+            <small class="error-msg" id="error-telefono"></small>
+          </div>
+
+          <!-- Email: formato tipo nnnnn@zzz.xx, validado por JS -->
+          <div class="campo-form">
+            <label for="email">Correo electrónico</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="tucorreo@empresa.com"
+            >
+            <small class="error-msg" id="error-email"></small>
+          </div>
+        </fieldset>
+
+        <!-- ================= BLOQUE PRESUPUESTO ================= -->
+        <fieldset class="bloque-formulario">
+          <legend>Configuración del presupuesto</legend>
+
+          <!-- Producto: minimo 3 opciones, cada una con su precio base -->
+          <div class="campo-form">
+            <label for="producto">Servicio que necesitas</label>
+            <select id="producto" name="producto">
+              <option value="">-- Selecciona un servicio --</option>
+              <!-- Uso data-precio para guardar el precio base de cada opcion -->
+              <option value="puesto" data-precio="60">
+                Revisión de puesto de trabajo (60 €)
+              </option>
+              <option value="red" data-precio="80">
+                Instalación de punto de red (80 €)
+              </option>
+              <option value="mantenimiento" data-precio="100">
+                Visita de mantenimiento de campo (100 €)
+              </option>
+            </select>
+            <small class="error-msg" id="error-producto"></small>
+          </div>
+
+          <!-- Plazo: numero de dias o meses; segun el valor aplico descuento -->
+          <div class="campo-form">
+            <label for="plazo">
+              Plazo previsto (en días)
+              <span class="nota-plazo">(aplico descuento si son varios días)</span>
+            </label>
+            <input
+              type="number"
+              id="plazo"
+              name="plazo"
+              min="1"
+              max="365"
+              placeholder="Ej: 1, 5, 10..."
+            >
+            <small class="ayuda-plazo">
+              • 1-2 días: sin descuento · 3-5 días: 5% descuento · 6 o más: 10% descuento
+            </small>
+            <small class="error-msg" id="error-plazo"></small>
+          </div>
+
+          <!-- Extras: varios checkboxes, cada uno suma importe al total -->
+          <div class="campo-form">
+            <span class="etiqueta-bloque">Extras opcionales</span>
+
+            <label class="check-extra">
+              <input
+                type="checkbox"
+                class="extra-check"
+                value="desplazamiento"
+                data-precio="15"
+              >
+              Desplazamiento fuera de radio estándar (+15 €)
+            </label>
+
+            <label class="check-extra">
+              <input
+                type="checkbox"
+                class="extra-check"
+                value="remoto"
+                data-precio="20"
+              >
+              Soporte remoto adicional después de la visita (+20 €)
+            </label>
+
+            <label class="check-extra">
+              <input
+                type="checkbox"
+                class="extra-check"
+                value="informe"
+                data-precio="10"
+              >
+              Informe técnico detallado en PDF (+10 €)
+            </label>
+          </div>
+
+          <!-- Resumen del presupuesto calculado automaticamente -->
+          <div class="campo-form resumen-presupuesto">
+            <h2>Presupuesto aproximado</h2>
+
+            <!-- Campo donde enseño el total calculado por JS -->
+            <!-- Lo dejo readonly para que el cliente no lo toque -->
+            <label for="presupuestoTotal">Total (IVA no incluido)</label>
+            <input
+              type="text"
+              id="presupuestoTotal"
+              name="presupuestoTotal"
+              value="0 €"
+              readonly
+            >
+
+            <!-- Aqui muestro una mini descripcion del descuento aplicado -->
+            <p id="detalle-descuento" class="detalle-descuento">
+              Selecciona servicio, plazo i extras para ver el total.
+            </p>
+          </div>
+        </fieldset>
+
+        <!-- ================= CONDICIONES Y BOTONES ================= -->
+        <div class="bloque-formulario bloque-final">
+          <!-- Checkbox de condiciones de privacidad obligatorio -->
+          <div class="campo-form">
+            <label class="check-condiciones">
+              <input type="checkbox" id="acepto" name="acepto">
+              He leído i acepto la política de privacidad.
+            </label>
+            <small class="error-msg" id="error-acepto"></small>
+          </div>
+
+          <!-- Botones: enviar i limpiar (reset) -->
+          <div class="botones-form">
+            <!-- El submit solo se procesará si todo esta validado en JS -->
+            <button type="submit" class="btn btn-primary">
+              Enviar solicitud
+            </button>
+            <button type="reset" class="btn btn-outline">
+              Limpiar datos
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- Pie de pagina con datos, redes i enlaces legales -->
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>SATPro IT Services</h3>
+            <p>Servicio de atención técnica informática de campo para empresas.</p>
+            <p class="footer-address">
+            C/ Ejemplo 123, 28000 Madrid · España
+            </p>
+        </div>
+
+        <div>
+            <h4>Redes sociales</h4>
+            <div class="footer-social">
+<!-- Enlaces a redes sociales, apuntando a las oficiales genericas -->
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">FB</a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">IN</a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="X / Twitter">X</a>
+        </div>
+    </div>
+
+        <div>
+            <h4>Legal</h4>
+<!-- Enlaces tipicos de aviso legal, privacidad i cookies -->
+            <ul class="footer-legal">
+                <li><a href="#">Aviso legal</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Política de cookies</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+<!-- El año se rellena con JavaScript en main.js -->
+        <p>© <span id="year"></span> SATPro IT Services. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- Scripts al final para que la pagina cargue primero el HTML i luego el JS -->
+    <script src="js/main.js"></script>
+    <script src="js/presupuesto.js"></script>
+</body>
+</html>
+
+
+
+    

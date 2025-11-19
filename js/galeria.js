@@ -1,6 +1,4 @@
 // Script para generar la galeria automaticamente
-// Aqui leo las imagenes que tengo en /img/galeria y las pongo dentro del grid
-// No hago nada raro: solo recorro un array y creo los <a> con lightbox
 
 document.addEventListener("DOMContentLoaded", () => {
     const contenedor = document.getElementById("galeria-contenedor");
@@ -8,8 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Si por lo que sea no existe, pues no hago nada
   if (!contenedor) return;
 
-  // Array con las imagenes de la galería ya que no puedo leer el directorio con JS puro
-  // Si quieres añadir mas, simplemente las pones en esta lista
+  // lista con las imagenes de la galería ya que no puedo leer el directorio con JS
   const fotos = [
     "rack1.jpg",
     "rack2.jpg",

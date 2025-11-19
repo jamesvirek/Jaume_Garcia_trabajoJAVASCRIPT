@@ -1,6 +1,4 @@
 // Script para cargar las noticias desde el JSON externo
-// (esto sirve para cumplir el punto del trabajo q pide AJAX/fetch)
-// Hecho simple para que funcione en local
 
 document.addEventListener("DOMContentLoaded", () => {
   const newsContainer = document.getElementById("news-container");
@@ -41,7 +39,7 @@ function pintarNoticias(lista, container) {
     return;
   }
 
-  // Recorro cada noticia y creo su tarjetita
+  // Miro cada noticia y creo su tarjetita
   lista.forEach((item) => {
     const card = document.createElement("article");
     card.className = "news-card";
@@ -59,7 +57,7 @@ function pintarNoticias(lista, container) {
     const body = document.createElement("p");
     body.textContent = item.descripcion || "";
 
-    // Montar en orden
+    // Montarlo
     card.appendChild(title);
     card.appendChild(meta);
     card.appendChild(body);

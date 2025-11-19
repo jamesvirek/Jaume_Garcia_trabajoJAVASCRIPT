@@ -1,6 +1,6 @@
 // Script del mapa de contacto
-// Uso Leaflet + Leaflet Routing Machine para no complicarme con APIs de pago
-// Mapa con OpenStreetMap i ruta desde la ubicacion del usuario hasta SATPro
+// Uso Leaflet + Leaflet Routing Machine para no complicarme con APIs
+// Mapa con OpenStreetMap i ruta desde la ubicacion del usuario hasta SATPro, hay que dar permiso al navegador
 
 document.addEventListener("DOMContentLoaded", () => {
   const mapaDiv = document.getElementById("mapa-satpro");
@@ -11,10 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!mapaDiv) return;
 
   // Coordenadas aproximadas de la oficina (Madrid centro)
-  // Se puede cambiar por otra ciudad sin problema
   const satproLatLng = [40.4168, -3.7038];
 
-  // Inicializo el mapa con Leaflet
+  // Inicializar el mapa con Leaflet
   const mapa = L.map("mapa-satpro").setView(satproLatLng, 13);
 
   // Capa base de OpenStreetMap (gratuita)
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mapa.removeControl(controlRuta);
     }
 
-    // Leaflet Routing Machine usando el servidor de OSRM por defecto
+    // Leaflet Routing Machine usando el servidor por defecto
     controlRuta = L.Routing.control({
       waypoints: [
         L.latLng(origenLatLng[0], origenLatLng[1]),
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Muevo el mapa para que se vea bien la ruta
         mapa.setView(origenLatLng, 12);
 
-        // Creo un marcador en la posicion del usuario (por si queremos verlo)
+        // Creo un marcador en la posicion del usuario
         L.marker(origenLatLng)
           .addTo(mapa)
           .bindPopup("Tu ubicación aproximada")

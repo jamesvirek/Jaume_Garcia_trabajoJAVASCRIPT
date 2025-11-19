@@ -132,8 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   }
 
-  // Funcion que calcula el presupuesto total segun:
-  // producto seleccionado + extras + descuento por plazo
+  // Funcion que calcula el presupuesto total segun producto seleccionado + extras + descuento por plazo
+  // 
   function recalcularPresupuesto() {
     // Si no hay producto todavia, dejo el mensaje por defecto
     if (!selectProducto.value) {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Precio base del producto (lo saco del data-precio)
+    // Precio base del producto
     const opcionSeleccionada =
       selectProducto.options[selectProducto.selectedIndex];
     const precioBase = Number(opcionSeleccionada.dataset.precio || 0);
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Eventos para validar en tiempo real (on the fly)
+  // Eventos para validar en tiempo real
   inputNombre.addEventListener("blur", validarNombre);
   inputApellidos.addEventListener("blur", validarApellidos);
   inputTelefono.addEventListener("blur", validarTelefono);
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Validacion global al enviar el formulario
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Evito el envio real para controlarlo yo
+    e.preventDefault(); // Evito el envio real
 
     const okNombre = validarNombre();
     const okApellidos = validarApellidos();
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Solo si todo esta correcto, simulo el "envio"
     if (okNombre && okApellidos && okTelefono && okEmail &&
         okProducto && okPlazo && okAcepto) {
-      // Aqui podria hacer un alert o mostrar un mensaje de que todo ok
+      //
       alert("Solicitud enviada correctamente. En breve contactaremos contigo.");
       form.reset();
       // Reseteo el total tambien
